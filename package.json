@@ -1,6 +1,6 @@
 {
   "name": "@shelf/is-audio-filepath",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Determine whether filepath is for audio file",
   "license": "MIT",
   "repository": "shelfio/is-audio-filepath",
