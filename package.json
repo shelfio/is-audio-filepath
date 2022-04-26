@@ -35,7 +35,7 @@
     "husky": "4.3.8",
     "jest": "25.1.0",
     "lint-staged": "10.0.7",
-    "microbundle": "0.12.0",
+    "microbundle": "0.15.0",
     "prettier": "1.19.1"
   },
   "jest": {
