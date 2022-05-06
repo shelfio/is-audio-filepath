@@ -37,4 +37,3 @@ const audioExtensions = new Set([
 export default function (filepath: string): boolean {
   return audioExtensions.has(path.extname(filepath).slice(1).toLowerCase());
 }
-
