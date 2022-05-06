@@ -1,13 +1,45 @@
 {
+  "name": "@shelf/is-audio-filepath",
+  "version": "0.0.3",
+  "description": "Determine whether filepath is for audio file",
+  "keywords": [
+    "is-audio"
+  ],
+  "license": "MIT",
   "author": {
-    "email": "vitalii@shelf.io",
     "name": "Vitalii Sikora",
+    "email": "vitalii@shelf.io",
     "url": "shelf.io"
+  },
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
+    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
+    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
+    "coverage": "yarn test --coverage",
+    "lint": "yarn lint:ci --fix",
+    "lint:ci": "eslint . --ext .js,.ts,.json",
+    "prepack": "yarn build",
+    "test": "TZ=UTC jest src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "lint-staged": {
+    "*.{html,md,yml}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,json}": [
+      "eslint --fix"
+    ]
   },
   "babel": {
     "extends": "@shelf/babel-config/backend"
   },
-  "description": "Determine whether filepath is for audio file",
+  "prettier": "@shelf/prettier-config",
   "devDependencies": {
     "@babel/cli": "7.17.10",
     "@babel/core": "7.17.10",
@@ -27,39 +59,7 @@
   "engines": {
     "node": ">=14"
   },
-  "files": [
-    "lib"
-  ],
-  "keywords": [
-    "is-audio"
-  ],
-  "license": "MIT",
-  "lint-staged": {
-    "*.{html,md,yml}": [
-      "prettier --write"
-    ],
-    "*.{js,ts,json}": [
-      "eslint --fix"
-    ]
-  },
-  "main": "lib",
-  "name": "@shelf/is-audio-filepath",
-  "prettier": "@shelf/prettier-config",
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
-    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
-    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
-    "coverage": "yarn test --coverage",
-    "lint": "yarn lint:ci --fix",
-    "lint:ci": "eslint . --ext .js,.ts,.json",
-    "prepack": "yarn build",
-    "test": "TZ=UTC jest src",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
-  },
-  "types": "lib/index.d.ts",
-  "version": "0.0.3"
+  }
 }
