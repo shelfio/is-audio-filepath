@@ -1,4 +1,5 @@
-const path = require('path');
+import path from 'path';
+
 const audioExtensions = new Set([
   'wav',
   'bwf',
@@ -30,13 +31,9 @@ const audioExtensions = new Set([
   'opus',
   'ra',
   'sln',
-  'vox'
+  'vox',
 ]);
 
-module.exports = filepath =>
-  audioExtensions.has(
-    path
-      .extname(filepath)
-      .slice(1)
-      .toLowerCase()
-  );
+export default function (filepath: string): boolean {
+  return audioExtensions.has(path.extname(filepath).slice(1).toLowerCase());
+}
