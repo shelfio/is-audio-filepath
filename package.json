@@ -1,37 +1,13 @@
 {
-  "name": "@shelf/is-audio-filepath",
-  "version": "0.0.3",
-  "description": "Determine whether filepath is for audio file",
-  "license": "MIT",
   "author": {
-    "name": "Vitalii Sikora",
     "email": "vitalii@shelf.io",
+    "name": "Vitalii Sikora",
     "url": "shelf.io"
   },
   "babel": {
     "extends": "@shelf/babel-config/backend"
   },
-  "engines": {
-    "node": ">=14"
-  },
-  "scripts": {
-    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
-    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
-    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
-    "coverage": "yarn test --coverage",
-    "lint": "yarn lint:ci --fix",
-    "lint:ci": "eslint . --ext .js,.ts,.json",
-    "prepack": "yarn build",
-    "test": "TZ=UTC jest src",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
-  },
-  "files": [
-    "lib"
-  ],
-  "main": "lib",
-  "types": "lib/index.d.ts",
-  "keywords": ["is-audio"],
+  "description": "Determine whether filepath is for audio file",
   "devDependencies": {
     "@babel/cli": "7.17.10",
     "@babel/core": "7.17.10",
@@ -48,6 +24,16 @@
     "prettier": "2.6.2",
     "typescript": "4.6.4"
   },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "is-audio"
+  ],
+  "license": "MIT",
   "lint-staged": {
     "*.{html,md,yml}": [
       "prettier --write"
@@ -56,8 +42,24 @@
       "eslint --fix"
     ]
   },
+  "main": "lib",
+  "name": "@shelf/is-audio-filepath",
   "prettier": "@shelf/prettier-config",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "scripts": {
+    "build": "rm -rf lib/ && yarn build:types && yarn build:code",
+    "build:code": "babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts' && find ./lib -name '*.test.d.ts' -delete",
+    "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
+    "coverage": "yarn test --coverage",
+    "lint": "yarn lint:ci --fix",
+    "lint:ci": "eslint . --ext .js,.ts,.json",
+    "prepack": "yarn build",
+    "test": "TZ=UTC jest src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "types": "lib/index.d.ts",
+  "version": "0.0.3"
 }
