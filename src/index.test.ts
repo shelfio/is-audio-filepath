@@ -5,7 +5,7 @@ it('should return true if file is audio', () => {
 });
 
 it('should return true if file is audio and only filename passed', () => {
-  expect(isAudioFilepath('src/folder/file.mp3')).toBe(true);
+  expect(isAudioFilepath('file.mp3')).toBe(true);
 });
 
 it('should return false if file is not audio', () => {
