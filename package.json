@@ -39,6 +39,7 @@
     "extends": "@shelf/babel-config/backend"
   },
   "prettier": "@shelf/prettier-config",
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.23.4",
     "@babel/core": "7.23.5",
@@ -61,6 +62,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }
