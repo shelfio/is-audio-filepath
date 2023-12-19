@@ -1,6 +1,6 @@
 {
   "name": "@shelf/is-audio-filepath",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Determine whether filepath is for audio file",
   "keywords": [
     "is-audio"
