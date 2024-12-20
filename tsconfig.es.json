@@ -1,13 +1,7 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": [
-    "node_modules",
-    "**/*.test.*",
-    "**/*.mock.ts"
-  ],
-  "include": [
-    "src"
-  ],
+  "exclude": ["node_modules", "**/*.test.*", "**/*.mock.ts"],
+  "include": ["src"],
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
